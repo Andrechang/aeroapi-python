@@ -1,10 +1,10 @@
 from typing import Optional
-from Operators import Operators
-from APICaller import APICaller
-from Airports import Airports
-from History import History
-from Miscellaneous import Miscellaneous
-from Flights import Flights
+from .Operators import Operators
+from .APICaller import APICaller
+from .Airports import Airports
+from .History import History
+from .Miscellaneous import Miscellaneous
+from .Flights import Flights
 
 
 class AeroAPI:
