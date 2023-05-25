@@ -4,13 +4,13 @@ import pathlib
 import setuptools
 
 # Read the contents of your README file
-with open("README.md", "r", encoding="utf-8") as fh:
-    long_description = fh.read()
+# with open("README.md", "r", encoding="utf-8") as fh:
+#     long_description = fh.read()
 
 with open('requirements.txt') as f:
     requirements = f.read().splitlines()
 
-# readme_path = pathlib.Path("README.md")
+readme_path = pathlib.Path("README.md")
 # requirements_path = pathlib.Path("requirements.txt")
 
 setuptools.setup(
@@ -42,6 +42,6 @@ setuptools.setup(
     ],
     keywords="python aeroapi flightaware flightaware-api flightaware-aeroapi flightaware-aeroapi-python flightaware-aeroapi-python3 flightaware-aeroapi-python3.5 flightaware-aeroapi-python3.6 flightaware-aeroapi-python3.7 flightaware-aeroapi-python3.8 flightaware-aeroapi-python3.9",
     py_modules=["hello_bot"],
-    install_requires=requirements
+    install_requires=requirements,
     python_requires=">=3.5",
 )
