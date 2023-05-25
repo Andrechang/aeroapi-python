@@ -1,5 +1,5 @@
 from typing import Optional, Dict, Any
-from APICaller import APICaller
+from .APICaller import APICaller
 
 
 class Operators:
