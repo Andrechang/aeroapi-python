@@ -32,7 +32,6 @@ jobs:
         pip install -r requirements.txt
         pip install build
     - name: Build package
-      working-directory: ./
       run: |
         ls -la
         python -m build
