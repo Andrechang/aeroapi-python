@@ -6,7 +6,7 @@ setup(
     author='Deren S',
     author_email='derens99@gmail.com',
     description='FlightAware AeroAPI Caller for Python',
-    long_description=open('README.md').read(),
+    long_description='FlightAware AeroAPI Caller for Python',
     packages=find_packages(),
     install_requires=[
         'requests',
