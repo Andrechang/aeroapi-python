@@ -21,9 +21,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+    - name: Checkout repository
+      uses: actions/checkout@v2
     - name: Set up Python
-      uses: actions/setup-python@v3
+      uses: actions/setup-python@v2
       with:
         python-version: '3.x'
     - name: Install dependencies
@@ -32,11 +33,11 @@ jobs:
         pip install -r requirements.txt
         pip install build
     - name: Build package
-      run: |
-        ls -la
-        python -m build
-    - name: Publish package
-      uses: pypa/gh-action-pypi-publish@27b31702a0e7fc50959f5ad993c78deac1bdfc29
-      with:
-        user: __token__
-        password: ${{ secrets.TEST_PYPI_API_TOKEN }}
+      run: python setup.py bdist_wheel
+    - name: Check package long description
+      run: twine check dist/*
+    - name: Publish package to TestPyPI
+      env:
+        TWINE_USERNAME: __token__
+        TWINE_PASSWORD: ${{ secrets.TEST_PYPI_API_TOKEN }}
+      run: twine upload -r testpypi dist/*
