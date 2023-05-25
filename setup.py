@@ -41,7 +41,15 @@ setuptools.setup(
         "Topic :: Utilities",
     ],
     keywords="python aeroapi flightaware flightaware-api flightaware-aeroapi flightaware-aeroapi-python flightaware-aeroapi-python3 flightaware-aeroapi-python3.5 flightaware-aeroapi-python3.6 flightaware-aeroapi-python3.7 flightaware-aeroapi-python3.8 flightaware-aeroapi-python3.9",
-    py_modules=["hello_bot"],
+    py_modules=[
+        "aeroapi_python.APICaller",
+        "aeroapi_python.AeroAPI",
+        "aeroapi_python.Airports",
+        "aeroapi_python.Flights",
+        "aeroapi_python.History",
+        "aeroapi_python.Miscellaneous",
+        "aeroapi_python.Operators",
+    ],
     install_requires=requirements_path.read_text().splitlines(),
     python_requires=">=3.5",
 )
