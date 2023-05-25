@@ -1,1 +1,6 @@
+semantic-version 
+setuptools 
+wheel 
+twine
+
 requests==2.26.0
