@@ -15,7 +15,7 @@ requirements_path = pathlib.Path("requirements.txt")
 
 setuptools.setup(
     name="aeroapi-python",
-    version="1.1.1",
+    version="1.1.2",
     description='FlightAware AeroAPI Caller for Python',
     long_description=readme_path.read_text(),
     long_description_content_type="text/markdown",

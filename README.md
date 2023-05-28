@@ -1,7 +1,14 @@
 
 # AeroApi Python
 
-The (Unofficial) FlightAware AeroAPI Python Wrapper is a Python package that provides a convenient and easy-to-use interface for interacting with the FlightAware AeroAPI. This package simplifies the process of making API calls to FlightAware, retrieving and processing flight data, and integrating it into your Python applications.
+Python wrapper for the FlightAware's AeroAPI
+
+## Description
+
+AeroAPI (formerly FlightXML) is FlightAware's live flight data API that provides powerful, reliable information about real-time and historical flight information. This Python wrapper allows for easier interaction with the AeroAPI from Python applications.
+
+## FlightAware AeroAPI Reference
+[AeroAPI](https://flightaware.com/aeroapi)
 
 ## Installation
 
@@ -10,6 +17,23 @@ pip install aeroapi-python
 ```
     
 ### Using test pypi, install with this command.
-'''bash
+```bash
 pip install --index-url https://pypi.org/simple/ --extra-index-url https://test.pypi.org/simple/ aeroapi-python
-'''
+```
+
+## Usage
+
+```python
+from aeroapi_python import AeroApi
+
+# initialize with your AeroAPI username and API Key
+aero_api = AeroAPI('your-api-key')
+```
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
+
+## Authors
+
+- [@derens99](https://www.github.com/derens99)
