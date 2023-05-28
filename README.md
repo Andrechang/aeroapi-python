@@ -9,3 +9,7 @@ The (Unofficial) FlightAware AeroAPI Python Wrapper is a Python package that pro
 pip install aeroapi-python
 ```
     
+### Using test pypi, install with this command.
+'''bash
+pip install --index-url https://pypi.org/simple/ --extra-index-url https://test.pypi.org/simple/ aeroapi-python
+'''

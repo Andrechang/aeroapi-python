@@ -1,0 +1,32 @@
+name: PyPI Release from GitHub Actions
+
+on:
+  release:
+    types: [created]
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    name: Build and publish Python 🐍 distributions 📦 to PyPI
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: "3.x"
+
+    - name: Install pypa/build
+      run: python3 -m pip install build --user
+
+    - name: Install bump2version
+      run: pip install bump2version
+
+    - name: Bump version
+      run: bump2version minor
+
+    - name: Build a binary wheel and a source tarball
+      run: python3 -m build --sdist --wheel --outdir dist/
