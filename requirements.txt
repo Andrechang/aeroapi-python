@@ -1,4 +1,3 @@
-semantic-version 
 setuptools 
 wheel 
 twine
