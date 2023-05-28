@@ -31,8 +31,8 @@ jobs:
     - name: Install bump2version
       run: pip install bump2version
 
-    - name: Bump version
-      run: bump2version minor
+    # - name: Bump version
+    #   run: bump2version minor
     
     - name: Build a binary wheel and a source tarball
       run: python3 -m build --sdist --wheel --outdir dist/
