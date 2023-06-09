@@ -1,7 +1,9 @@
-import requests
 import logging
-from urllib.parse import urljoin, urlencode
-from typing import Optional, Dict, Any
+from typing import Any, Dict, Optional
+from urllib.parse import urlencode, urljoin
+
+import requests
+
 
 class APICaller:
     """
@@ -12,16 +14,20 @@ class APICaller:
         session (requests.Session): The session object for making requests.
 
     Methods:
-        _send_request(method: str, endpoint: str, payload: Optional[Dict[str, Any]] = None, headers: Optional[Dict[str, Any]] = None) -> Optional[Dict[str, Any]]:
+        _send_request(method: str, endpoint: str, payload: Optional[Dict[str, Any]] 
+         = None, headers: Optional[Dict[str, Any]] = None) -> Optional[Dict[str, Any]]:
             Sends a request to the API.
 
-        get(endpoint: str, headers: Optional[Dict[str, Any]] = None) -> Optional[Dict[str, Any]]:
+        get(endpoint: str, headers: Optional[Dict[str, Any]] = None) -> 
+        Optional[Dict[str, Any]]:
             Sends a GET request to the API.
 
-        post(endpoint: str, payload: Dict[str, Any], headers: Optional[Dict[str, Any]] = None) -> Optional[Dict[str, Any]]:
+        post(endpoint: str, payload: Dict[str, Any], headers: Optional[Dict[str, Any]]
+          = None) -> Optional[Dict[str, Any]]:
             Sends a POST request to the API.
 
-        _build_path(endpoint: str, sub_path: Optional[str] = None, query: Optional[Dict[str, Any]] = None) -> str:
+        _build_path(endpoint: str, sub_path: Optional[str]
+          = None, query: Optional[Dict[str, Any]] = None) -> str:
             Builds a URL path for an API request.
     """
 
@@ -36,9 +42,15 @@ class APICaller:
         self.base_url = base_url
 
         self.session = requests.Session()
-        self.session.headers.update({'x-apikey': api_key})
+        self.session.headers.update({"x-apikey": api_key})
 
-    def _send_request(self, method: str, endpoint: str, payload: Optional[Dict[str, Any]] = None, headers: Optional[Dict[str, Any]] = None) -> Optional[Dict[str, Any]]:
+    def _send_request(
+        self,
+        method: str,
+        endpoint: str,
+        payload: Optional[Dict[str, Any]] = None,
+        headers: Optional[Dict[str, Any]] = None,
+    ) -> Optional[Dict[str, Any]]:
         """
         Sends a request to the API.
 
@@ -60,7 +72,9 @@ class APICaller:
             logging.error(e)
             return None
 
-    def get(self, endpoint: str, headers: Optional[Dict[str, Any]] = None) -> Optional[Dict[str, Any]]:
+    def get(
+        self, endpoint: str, headers: Optional[Dict[str, Any]] = None
+    ) -> Optional[Dict[str, Any]]:
         """
         Sends a GET request to the API.
 
@@ -71,9 +85,14 @@ class APICaller:
         Returns:
             dict: The parsed JSON response, or None if the request failed.
         """
-        return self._send_request('GET', endpoint, headers=headers)
-    
-    def post(self, endpoint: str, payload: Dict[str, Any], headers: Optional[Dict[str, Any]] = None) -> Optional[Dict[str, Any]]:
+        return self._send_request("GET", endpoint, headers=headers)
+
+    def post(
+        self,
+        endpoint: str,
+        payload: Dict[str, Any],
+        headers: Optional[Dict[str, Any]] = None,
+    ) -> Optional[Dict[str, Any]]:
         """
         Sends a POST request to the API.
 
@@ -85,16 +104,23 @@ class APICaller:
         Returns:
             dict: The parsed JSON response, or None if the request failed.
         """
-        return self._send_request('POST', endpoint, payload, headers)
-    
-    def _build_path(self, endpoint: str, sub_path: Optional[str] = None, query: Optional[Dict[str, Any]] = None) -> str:
+        return self._send_request("POST", endpoint, payload, headers)
+
+    def _build_path(
+        self,
+        endpoint: str,
+        sub_path: Optional[str] = None,
+        query: Optional[Dict[str, Any]] = None,
+    ) -> str:
         """
-        Builds a URL path for an API request, including optional sub-path and query parameters.
+        Builds a URL path for an API request, including optional sub-path and query 
+        parameters.
 
         Args:
             endpoint (str): The endpoint of the API request.
             sub_path (str): Optional, a sub-path to append to the endpoint.
-            query (dict): Optional, a dictionary of query parameters to include in the URL.
+            query (dict): Optional, a dictionary of query parameters to include in the 
+            URL.
 
         Returns:
             str: The complete URL path for the API request.

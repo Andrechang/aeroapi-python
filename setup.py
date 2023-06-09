@@ -1,4 +1,3 @@
-import os
 import pathlib
 
 import setuptools
@@ -7,7 +6,7 @@ import setuptools
 # with open("README.md", "r", encoding="utf-8") as fh:
 #     long_description = fh.read()
 
-with open('requirements.txt') as f:
+with open("requirements.txt") as f:
     requirements = f.read().splitlines()
 
 readme_path = pathlib.Path("README.md")
@@ -16,7 +15,7 @@ requirements_path = pathlib.Path("requirements.txt")
 setuptools.setup(
     name="aeroapi-python",
     version="1.1.4",
-    description='FlightAware AeroAPI Caller for Python',
+    description="FlightAware AeroAPI Caller for Python",
     long_description=readme_path.read_text(),
     long_description_content_type="text/markdown",
     url="https://github.com/derens99/aeroapi-python",
@@ -40,7 +39,14 @@ setuptools.setup(
         "Topic :: Software Development :: Libraries :: Python Modules",
         "Topic :: Utilities",
     ],
-    keywords="python aeroapi flightaware flightaware-api flightaware-aeroapi flightaware-aeroapi-python flightaware-aeroapi-python3 flightaware-aeroapi-python3.5 flightaware-aeroapi-python3.6 flightaware-aeroapi-python3.7 flightaware-aeroapi-python3.8 flightaware-aeroapi-python3.9",
+    keywords="python aeroapi flightaware flightaware-api "
+    "flightaware-aeroapi flightaware-aeroapi-python "
+    "flightaware-aeroapi-python3 "
+    "flightaware-aeroapi-python3.5 "
+    "flightaware-aeroapi-python3.6 "
+    "flightaware-aeroapi-python3.7 "
+    "flightaware-aeroapi-python3.8 "
+    "flightaware-aeroapi-python3.9",
     py_modules=[
         "aeroapi_python.APICaller",
         "aeroapi_python.AeroAPI",
