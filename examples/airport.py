@@ -4,7 +4,6 @@ from ..aeroapi_python.AeroAPI import AeroAPI
 api_key = 'your-api-key'
 aero_api = AeroAPI(api_key)
 
-
 # Get a list of all airports
 def get_airports():
     airports = aero_api.airports.get_airports()
@@ -57,12 +56,12 @@ def get_scheduled_departures(airport_code='KLAX'):
 
 # Get a list of flights between two airports
 def get_flights_between_airports(origin='KLAX', destination='KJFK'):
-    flights_between_airports = aero_api.airports.get_flights_between_airports(origin_id=origin, dest_id=destination)
+    flights_between_airports = aero_api.airports.get_flights_between_airports(
+        origin_id=origin, dest_id=destination)
     return flights_between_airports
 
 # Get a list of nearby airports based on latitude and longitude
 def get_nearby_airports(airport_code='KLAX', radius=10):
-    nearby_airports = aero_api.airports.get_nearby_airports(airport_id=airport_code, radius=radius)
+    nearby_airports = aero_api.airports.get_nearby_airports(
+        airport_id=airport_code, radius=radius)
     return nearby_airports
-
-
